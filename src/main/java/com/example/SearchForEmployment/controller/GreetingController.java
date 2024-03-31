@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
     @Autowired
-    //@Qualifier("secondService")
+    @Qualifier("secondService")
     private UserService userService;
 
     @GetMapping("/hello")
