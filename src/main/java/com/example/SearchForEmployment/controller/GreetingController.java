@@ -1,23 +1,19 @@
 package com.example.SearchForEmployment.controller;
 
-import com.example.SearchForEmployment.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+@Controller
 public class GreetingController {
-    @Autowired
-    @Qualifier("secondService")
-    private UserService userService;
-
-    @GetMapping("/hello")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name){
-        return userService.addNewName(name);
+    @RequestMapping(value = "/greeting")
+    public String greetingController(@RequestParam(name = "name", required = false, defaultValue = "Гость") String name, Model model) {
+        model.addAttribute("name", name);
+        return "greeting";
     }
+    /*@PostMapping(value = "/register")
+    public*/
 }

@@ -2,14 +2,7 @@ package com.example.SearchForEmployment.model.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import lombok.*;
 
 @Data
 @Builder
@@ -22,9 +15,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private boolean isBanned;
-    @Column(name = "firstName")
-    private String firstName;
-    @Column(name = "lastName")
+    @Column(name = "name")
+    private String name;
+
+    public User(String name) {
+        this.name = name;
+    }
+
+    /*@Column(name = "lastName")
     private String lastName;
     @Column(name = "age")
     private Integer age;
@@ -54,5 +52,5 @@ public class User {
         int result = Objects.hash(id, isBanned, firstName, lastName, age, email, role, login);
         result = 31 * result + Arrays.hashCode(password);
         return result;
-    }
+    }*/
 }
