@@ -16,7 +16,7 @@ public class UserServiceImplNew implements UserService {
     @Override
     public String addNewName(String name) {
 
-        userRepository.save(new User(name));
+        //userRepository.save(new User(name));
         return "Добро пожаловать, " + name;
     }
 

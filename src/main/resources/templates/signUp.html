@@ -5,6 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Добро пожаловать, ' + ${name} + '!'" />
+    <p th:text="'Добро пожаловать!'" />
+    <form th:object="${user}"  th:action="@{/greeting/register}" method="post" >
+        <label>Login <br> </label><input th:field="*{login}" type="text" placeholder="login"> <br>
+        <label>Password <br> </label><input th:field="*{password}" type="password" placeholder="password"> <br>
+        <label>Email <br> </label><input th:field="*{email}" type="email" placeholder="email"> <br>
+        <button type="submit">
+            Зарегистрироваться
+        </button>
+    </form>
 </body>
 </html>
