@@ -6,10 +6,18 @@
 </head>
 <body>
     <p th:text="'Добро пожаловать!'" />
-    <form th:object="${user}"  th:action="@{/greeting/register}" method="post" >
-        <label>Login <br> </label><input th:field="*{login}" type="text" placeholder="login"> <br>
-        <label>Password <br> </label><input th:field="*{password}" type="password" placeholder="password"> <br>
-        <label>Email <br> </label><input th:field="*{email}" type="email" placeholder="email"> <br>
+    <form th:object="${user}"  th:action="@{/register}" method="post" >
+        <label>Логин <br> </label><input th:field="*{login}" type="text" placeholder="login"> <br>
+        <label>Пароль <br> </label><input th:field="*{password}" type="password" placeholder="password"> <br>
+        <label>Почта <br> </label><input th:field="*{email}" type="email" placeholder="email@gmail.com"> <br>
+        <label>Фамилия <br> </label><input th:field="*{lastName}" type="text" placeholder="Иванов"> <br>
+        <label>Имя <br> </label><input th:field="*{name}" type="text" placeholder="Иван"> <br>
+        <label>Возраст <br> </label><input th:field="*{age}" type="number" placeholder="18"> <br>
+        <label>Роль <br> </label>
+        <select th:field="*{role}" >
+            <option value="EMPLOYEE">Работник</option>
+            <option value="EMPLOYER">Работодатель</option>
+        </select> <br>
         <button type="submit">
             Зарегистрироваться
         </button>
