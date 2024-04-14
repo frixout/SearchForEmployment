@@ -6,4 +6,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "/greeting/authorization")
 public class AuthorizationController {
+
 }

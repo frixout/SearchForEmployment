@@ -5,3 +5,27 @@
 2. Реализовать вход с валидацией пароля.
 3. Реализовать логику разделения ролей.
 4. Реализовать логику поиска вакансий.
+
+
+form th:object="${user}"  th:action="@{/greeting/register}" method="post" >
+        <label>Почта <br> </label><input th:field="*{email}" type="email" placeholder="email@gmail.com"> <br>
+        <label>Пароль <br> </label><input th:field="*{password}" type="password" placeholder="password"> <br>
+        <label>Фамилия <br> </label><input th:field="*{lastName}" type="text" placeholder="Иванов"> <br>
+        <label>Имя <br> </label><input th:field="*{name}" type="text" placeholder="Иван"> <br>
+        <label>Возраст <br> </label><input th:field="*{age}" type="number" placeholder="18"> <br>
+        <label>Роль <br> </label>
+        <select th:field="*{role}" >
+            <option value="EMPLOYEE">Работник</option>
+            <option value="EMPLOYER">Работодатель</option>
+        </select> <br>
+        <!--<label>Город <br> </label><input th:field="*{country}" type="text" placeholder="Kazan"> <br>-->
+        <button type="submit">
+            Зарегистрироваться
+        </button>
+    </form>
+	
+	
+	
+	<ul>
+        <li data-th-each="error: ${errors}" data-th-text="${error}"></li>
+    </ul>

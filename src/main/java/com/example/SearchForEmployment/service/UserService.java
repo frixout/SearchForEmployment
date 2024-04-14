@@ -1,5 +1,9 @@
 package com.example.SearchForEmployment.service;
 
+import com.example.SearchForEmployment.model.entity.User;
+import org.springframework.ui.Model;
+
 public interface UserService {
-    public String addNewName(String name);
+    void registerUser(User user);
+
 }
